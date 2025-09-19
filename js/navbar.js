@@ -83,7 +83,7 @@ chrome.runtime.onMessage.addListener((request) => {
 				nav_bar_change();
 			}
 		} catch (error) {
-			console.log(error);
+			// console.log(error);
 		}
 	}
 });

@@ -305,7 +305,7 @@ const copyBtn = (details) => {
 		let str = JSON.stringify(obj);
 		let encoded = window.btoa(str);
 		let decoded = window.atob(encoded);
-		console.log(encoded, decoded);
+		// console.log(encoded, decoded);
 		navigator.clipboard.writeText(encoded);
 	});
 	/*var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
@@ -321,7 +321,7 @@ const initTimeTable = () => {
 			copyBtn(details);
 		}
 	} catch (error) {
-		console.log('Time table enhancement error:', error);
+		// console.log('Time table enhancement error:', error);
 	}
 };
 

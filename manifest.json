@@ -1,23 +1,15 @@
 {
-	"update_url": "https://clients2.google.com/service/update2/crx",
-	"manifest_version": 3,
+	"manifest_version": "1.2",
 	"name": "ViBoot Enhanced",
 	"description": "Enhance your VTOP in one-click.",
-	"version": "1.1",
+	"version": "1.2",
 	"author": "Arsh Saxena and Aishik Tokdar",
 	"icons": {
 		"16": "assets/icons/img_16.png",
 		"48": "assets/icons/img_48.png",
 		"128": "assets/icons/img_128.png"
 	},
-	"permissions": [
-		"webRequest",
-		"downloads",
-		"storage",
-		"tabs",
-		"alarms",
-		"notifications"
-	],
+	"permissions": ["webRequest", "downloads", "tabs"],
 	"host_permissions": [
 		"*://vtop.vit.ac.in/*",
 		"*://vtopcc.vit.ac.in/vtop/*",
@@ -34,21 +26,21 @@
 				"*://vtop.vitbhopal.ac.in/vtop/*"
 			],
 			"js": [
-				"js/attendance.js",
-				"js/marks_page.js",
-				"js/course_page.js",
-				"js/navbar.js",
 				"js/captcha/bitmaps.js",
 				"js/captcha/captchaparser.js",
+				"js/attendance.js",
+				"js/course_page.js",
+				"js/marks_page.js",
+				"js/navbar.js",
 				"js/navbarcc.js",
-				"js/time_table.js",
-				"js/on_duty.js"
+				"js/on_duty.js",
+				"js/time_table.js"
 			]
 		}
 	],
 	"web_accessible_resources": [
 		{
-			"matches": ["*://*.vit.ac.in/*"],
+			"matches": ["*://*.vit.ac.in/*", "*://*.vitbhopal.ac.in/*"],
 			"resources": []
 		}
 	],

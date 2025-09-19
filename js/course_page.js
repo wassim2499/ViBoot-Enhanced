@@ -239,7 +239,7 @@ const modify_page = () => {
 
 		toggleCheckbox.addEventListener('change', () => {
 			moduleWise = toggleCheckbox.checked;
-			console.log('Module Wise Download:', moduleWise);
+			// console.log('Module Wise Download:', moduleWise);
 		});
 	} else {
 		console.error(

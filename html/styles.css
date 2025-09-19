@@ -35,6 +35,6 @@ body {
 }
 
 .footer {
-    display: flex;
+	display: flex;
 	justify-content: center;
 }

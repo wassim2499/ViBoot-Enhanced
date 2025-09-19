@@ -2,7 +2,7 @@ const isDevMode = false; // Set to false to disable logs
 
 function log(...args) {
 	if (isDevMode) {
-		console.log(...args);
+		// console.log(...args);
 	}
 }
 

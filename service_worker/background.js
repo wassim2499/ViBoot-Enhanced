@@ -7,7 +7,7 @@ let time_last = new Date();
 let det_file_name = 'table_name';
 
 chrome.runtime.onMessage.addListener((request) => {
-	console.log(request);
+	// console.log(request);
 
 	if (request.message === 'table_name') {
 		det_file_name = 'table_name';
@@ -19,7 +19,7 @@ chrome.runtime.onMessage.addListener((request) => {
 		data = request.data;
 	}
 	if (request.message === 'assignment-page-data') {
-		console.log('Request Recieved - Assignment');
+		// console.log('Request Recieved - Assignment');
 		data = request.data;
 	}
 });
@@ -52,13 +52,13 @@ const trigger_download = (request) => {
 					response.ok &&
 					response.headers.get('Content-Type').includes('pdf')
 				) {
-					console.log(response.text);
+					// console.log(response.text);
 					chrome.downloads.download({
 						url: link.url,
 						conflictAction: 'uniquify',
 					});
 				} else {
-					console.log('Skipping non-PDF file: ', link.url);
+					// console.log('Skipping non-PDF file: ', link.url);
 				}
 			})
 			.catch((error) => {
@@ -68,8 +68,8 @@ const trigger_download = (request) => {
 };
 
 chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
-	console.log('Item');
-	console.log(item);
+	// console.log('Item');
+	// console.log(item);
 	if (
 		item.url.includes('vtop.vit.ac.in') ||
 		item.url.includes('vtopcc.vit.ac.in') ||
@@ -77,7 +77,7 @@ chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
 	) {
 		let view;
 		let fileUrlLower = item.url.toLowerCase();
-		console.log(fileUrlLower);
+		// console.log(fileUrlLower);
 		if (fileUrlLower.includes('examinations')) {
 			view = 'Assignment';
 		} else if (fileUrlLower.includes('coursesyllabusdownload')) {
@@ -87,15 +87,15 @@ chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
 		} else {
 			view = 'Unknown';
 		}
-		console.log(view);
+		// console.log(view);
 
 		if (view == 'Course') {
 			let file_extension = item.filename
 				.replace(/([^_]*_){8}/, '')
 				.split('.');
 			file_extension = '.' + file_extension[file_extension.length - 1];
-			console.log(course);
-			console.log(faculty_slot);
+			// console.log(course);
+			// console.log(faculty_slot);
 			if (course != '' && faculty_slot != '') {
 				let filename =
 					'VIT Downloads/' + course + '/' + faculty_slot + '/';
@@ -109,24 +109,24 @@ chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
 					else
 						filename += data.link_data[0]['title'] + file_extension;
 				} else filename += item.filename;
-				console.log(filename);
+				// console.log(filename);
 				suggest({
 					filename: filename,
 				});
 				course = '';
 				faculty_slot = '';
-				console.log('Flag 1');
+				// console.log('Flag 1');
 			} else
 				suggest({
 					filename: 'VIT Downloads/Other Downloads/' + item.filename,
 				});
 		} else if (view == 'Assignment') {
-			console.log('Flag 2');
+			// console.log('Flag 2');
 			let file_extension = item.filename
 				.replace(/([^_]*_){8}/, '')
 				.split('.');
 			file_extension = '.' + file_extension[file_extension.length - 1];
-			console.log(course);
+			// console.log(course);
 			let file_name = course;
 			if (item.url.includes('doDownloadQuestion')) file_name += ' QP ';
 			else if (item.url.includes('downloadSTudentDA'))
@@ -147,7 +147,7 @@ chrome.downloads.onDeterminingFilename.addListener((item, suggest) => {
 					file_extension,
 			});
 		} else if (view == 'Syllabus') {
-			console.log('Flag 3');
+			// console.log('Flag 3');
 			let file_extension = item.filename
 				.replace(/([^_]*_){8}/, '')
 				.split('.');
@@ -214,10 +214,4 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	} catch {
 		// Google auth functionality removed
 	}
-});
-
-chrome.alarms.create({ periodInMinutes: 0.5 });
-chrome.alarms.onAlarm.addListener(() => {
-	let a;
-	let time_nw = new Date();
 });
