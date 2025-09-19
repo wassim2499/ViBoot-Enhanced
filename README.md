@@ -93,9 +93,13 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 
 ## 👥 Credits
 
-- **ViBoot Author:** Manjunadha Abhinai (ViTrendz)
-- **ezOD Author (OD Analysis):** Parth Sidpara
-- **Enhanced by:** [Arsh Saxena](https://www.github.com/arshsaxena) and [Aishik Tokdar](https://www.github.com/AishikTokdar)
+| **Role**                    | **Name**                                                                                   | **Course & Year**         |
+|-----------------------------|--------------------------------------------------------------------------------------------|---------------------------|
+| **ViBoot Author**            | [Manjunadha Abhinai](https://www.linkedin.com/in/manjunadha-abhinai/) [ViTrendz]            | CSE @ VITV'25             |
+| **ezOD Author (OD Analysis)**| [Parth Sidpara](https://www.linkedin.com/in/parthsidpara/)                                | CSE @ VITC'27             |
+| **Enhanced by**              | [Arsh Saxena](https://www.github.com/arshsaxena)                                           | ECE @ VITC'27             |
+|                             | [Aishik Tokdar](https://www.github.com/AishikTokdar)                                       | ECE @ VITC'27             |
+
 
 _Original credits belong to the respective authors only._
 
@@ -103,4 +107,6 @@ _Original credits belong to the respective authors only._
 
 - [ViBoot on Chrome Web Store](https://chromewebstore.google.com/detail/viboot/mhbflefepokengbccinkmfhokjkphbol)
 - [ezOD on Chrome Web Store](https://chromewebstore.google.com/detail/ezod/hcjjembkbilgkojhpapcffibhandgokh)
-- [GitHub Repository](https://github.com/arshsaxena/ViBoot-Enhanced)
+- [ViBoot Enhanced GitHub Repository](https://github.com/arshsaxena/ViBoot-Enhanced)
+- [Arsh Saxena](https://www.arshsaxena.in) ([LinkedIn](https://www.linkedin.com/in/arshsaxena), [GitHub](https://www.github.com/arshsaxena))
+- Aishik Tokdar ([LinkedIn](https://www.linkedin.com/in/aishiktokdar), [GitHub](https://www.github.com/AishikTokdar))
