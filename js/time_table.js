@@ -40,42 +40,7 @@ const get_time_table_details = () => {
 	return details;
 };
 
-const add_buttons = () => {
-	let div = document.createElement('div');
-	div.style.textAlign = 'center';
-
-	let label = document.createElement('label');
-	label.innerText = '*Choose Date for syncing time table :';
-	label.style.color = 'red';
-	label.style.textAlign = 'center';
-	div.appendChild(label);
-
-	let date_holder = document.createElement('input');
-	date_holder.type = 'date';
-	date_holder.style.width = '105px';
-	date_holder.style.height = '35px';
-	date_holder.style.fontSize = '1rem';
-	date_holder.style.borderRadius = '10px';
-	date_holder.style.margin = '10px';
-	date_holder.style.textAlign = 'center';
-	date_holder.id = 'min_date';
-	let date = new Date();
-	date_holder.min = date.toISOString().split('T')[0];
-	date_holder.max = new Date(date.setMonth(date.getMonth() + 6))
-		.toISOString()
-		.split('T')[0];
-	div.appendChild(date_holder);
-
-	var btn = document.createElement('button');
-	btn.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 141.7 141.7" width="24" height="24"><path fill="#fff" d="M95.8,45.9H45.9V95.8H95.8Z"/><path fill="#34a853" d="M95.8,95.8H45.9v22.5H95.8Z"/><path fill="#4285f4" d="M95.8,23.4H30.9a7.55462,7.55462,0,0,0-7.5,7.5V95.8H45.9V45.9H95.8Z"/><path fill="#188038" d="M23.4,95.8v15a7.55462,7.55462,0,0,0,7.5,7.5h15V95.8Z"/><path fill="#fbbc04" d="M118.3,45.9H95.8V95.8h22.5Z"/><path fill="#1967d2" d="M118.3,45.9v-15a7.55462,7.55462,0,0,0-7.5-7.5h-15V45.9Z"/><path fill="#ea4335" d="M95.8,118.3l22.5-22.5H95.8Z"/><polygon fill="#2a83f8" points="77.916 66.381 75.53 63.003 84.021 56.868 87.243 56.868 87.243 85.747 82.626 85.747 82.626 62.772 77.916 66.381"/><path fill="#2a83f8" d="M67.29834,70.55785A7.88946,7.88946,0,0,0,70.78,64.12535c0-4.49-4-8.12-8.94-8.12a8.77525,8.77525,0,0,0-8.74548,6.45379l3.96252,1.58258a4.41779,4.41779,0,0,1,4.473-3.51635,4.138,4.138,0,1,1,.06256,8.24426v.00513h-.0559l-.00666.00061-.00964-.00061H59.15v3.87677h2.70642L61.88,72.65a4.70514,4.70514,0,1,1,0,9.37,5.35782,5.35782,0,0,1-3.96588-1.69354,4.59717,4.59717,0,0,1-.80408-1.2442l-.69757-1.69946L52.23005,79c.62,4.33,4.69,7.68,9.61,7.68,5.36,0,9.7-3.96,9.7-8.83A8.63346,8.63346,0,0,0,67.29834,70.55785Z"/></svg><span>Sync assignments with Google Calendar</span>`;
-	btn.style = `display: flex;align-items: center;gap: 1rem;font-family: inherit;justify-content: space-around;color: #535353;font-size: 13px;font-weight: 500;margin: 8px auto;cursor: pointer;background-color: white;border-radius: 32px;transition: all 0.2s ease-in-out;padding: 6px 10px;border: 1px solid rgba(0, 0, 0, 0.25);`;
-	btn.id = 'sync_dates_btn';
-	div.appendChild(btn);
-
-	let table = document.getElementsByClassName('table-responsive')[0];
-	table.insertAdjacentElement('beforebegin', div);
-};
+// Google Calendar sync functionality removed
 
 const times = {
 	A1: ['T08:00:00.000+05:30', 'T09:00:00.000+05:30'],
@@ -284,77 +249,7 @@ const add_time = (start, add) => {
 	return time;
 };
 
-let error_code1 = 0;
-let calendar_tt = (
-	title,
-	code,
-	venue,
-	date,
-	facName,
-	slot,
-	time,
-	token,
-	day_count,
-) => {
-	try {
-		let end_time;
-		if (slot.charAt(0) == 'L') {
-			end_time = add_time(time, 100);
-		} else {
-			end_time = add_time(time, 50);
-		}
-		fetch(
-			`https://www.googleapis.com/calendar/v3/calendars/primary/events?sendUpdates=all&sendNotifications=true&alt=json&key=AIzaSyCPBz-DTZdoTLQ_ZiqsVUO520XItcomTn0`,
-			{
-				method: 'POST',
-				headers: {
-					Authorization: 'Bearer ' + token,
-					Accept: 'application/json',
-				},
-				body: JSON.stringify({
-					end: {
-						dateTime: date + end_time,
-						timeZone: 'Asia/Kolkata',
-					},
-					start: {
-						dateTime: date + time,
-						timeZone: 'Asia/Kolkata',
-					},
-					recurrence: ['RRULE:FREQ=WEEKLY;COUNT=' + day_count],
-					eventType: 'default',
-					description: code + '-' + facName,
-					summary: title + '-' + venue,
-				}),
-			},
-		)
-			.then((res) => {
-				return res.json();
-			})
-			.then((data) => {
-				try {
-					if (data.error.code == 401) {
-						error_code1 = 401;
-					} else if (data.error.code == 403) {
-						calendar_tt(
-							title,
-							code,
-							venue,
-							date,
-							facName,
-							slot,
-							time,
-							token,
-							day_count,
-						);
-					}
-				} catch {}
-				return true;
-			})
-			.catch((err) => {});
-	} catch (err) {
-		// console.log(err);
-	}
-};
+// Utility functions for time table processing
 
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
@@ -418,129 +313,21 @@ const copyBtn = (details) => {
     base64regex.test("U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=");   // TRUE*/
 };
 
-const sync_calender_tt = () => {
-	let details = get_time_table_details();
+// Execute time table enhancements when the page loads
+const initTimeTable = () => {
 	try {
-		chrome.storage.sync.get(['token'], (token) => {
-			if (token.token != null) {
-				add_buttons();
-				let sync_btn = document.getElementById('sync_dates_btn');
-				sync_btn.addEventListener('click', async () => {
-					let till_date = document.getElementById('min_date').value;
-					if (till_date == '') {
-						let date = new Date();
-						let min_date = date.toISOString().split('T')[0];
-						let max_date = new Date(
-							date.setMonth(date.getMonth() + 6),
-						)
-							.toISOString()
-							.split('T')[0];
-						alert(
-							`Please Enter the date in range of ${min_date} - ${max_date}!!!`,
-						);
-						return;
-					}
-
-					document.getElementById('sync_dates_btn').disabled = true;
-
-					let sync_btn = document.getElementById('sync_dates_btn');
-					let sync_wait = document.createElement('div');
-					sync_wait.className = '';
-					let stmt = document.createElement('h4');
-					stmt.innerText = `Please Wait while the dates get synced!!!`;
-					stmt.style.textAlign = 'center';
-					stmt.style.color = 'red';
-					sync_wait.appendChild(stmt);
-					sync_wait.id = 'sync_wait_txt';
-					sync_btn.insertAdjacentElement('afterend', sync_wait);
-
-					let day_count = Math.ceil(
-						workingDayCount(new Date(), new Date(till_date)) / 5,
-					);
-					let dates = get_dates(till_date);
-					for (let i = 0; i < details.slot.length; i++) {
-						let individual_slot = details.slot[i].split('+');
-						let courseCode = details.courseCode[i];
-						let courseTitle = details.courseTitle[i];
-						let facName = details.facName[i];
-						let venue = details.venue[i];
-						if (venue == 'NIL') continue;
-						for (let j = 0; j < individual_slot.length; j++) {
-							let weekDay = days[individual_slot[j]];
-							if (
-								parseInt(individual_slot[j].slice(1)) % 2 ==
-									0 &&
-								individual_slot[j].charAt(0) == 'L'
-							)
-								continue;
-
-							if (error_code1 == 401) {
-								alert(
-									'Please Re-login with your Google account and refresh the page',
-								);
-								chrome.storage.sync.set({ token: null });
-								error_code1 = 0;
-								break;
-							}
-
-							for (let k = 0; k < weekDay.length; k++) {
-								let date = dates[weekDay[k]];
-								date = format_date(date);
-								let time = times[individual_slot[j]][k];
-								if (date.indexOf('NaN') != 0)
-									calendar_tt(
-										courseTitle,
-										courseCode,
-										venue,
-										date,
-										facName,
-										individual_slot[j],
-										time,
-										token.token,
-										day_count,
-									);
-								if (error_code1 == 401) {
-									break;
-								}
-								await sleep(500);
-							}
-						}
-						if (
-							error_code1 != 401 &&
-							i == details.slot.length - 1
-						) {
-							document.getElementById('sync_wait_txt').hidden =
-								true;
-							alert(
-								`Time Table is successfully synced to calender till ${till_date}🥳🥳`,
-							);
-							document.getElementById('sync_dates_btn').disabled =
-								false;
-						}
-					}
-				});
-			} else {
-				let div = document.createElement('div');
-				div.className = '';
-				let stmt = document.createElement('p');
-				stmt.innerText =
-					'**Sign in with google in extension to sync your due dates with Google Calender';
-				stmt.style.color = 'red';
-				div.appendChild(stmt);
-				document
-					.getElementsByClassName('table-responsive')[0]
-					.insertAdjacentElement('beforebegin', div);
-			}
-		});
-	} catch (err) {
-		// console.log(err);
+		const details = get_time_table_details();
+		if (details.courseCode.length > 0) {
+			copyBtn(details);
+		}
+	} catch (error) {
+		console.log('Time table enhancement error:', error);
 	}
 };
 
-chrome.runtime.onMessage.addListener((request) => {
-	if (request.message === 'time_table') {
-		try {
-			sync_calender_tt();
-		} catch (error) {}
-	}
-});
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', initTimeTable);
+} else {
+	initTimeTable();
+}

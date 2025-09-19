@@ -195,8 +195,6 @@ chrome.webRequest.onCompleted.addListener(
 			link.indexOf('goHomePage') !== -1
 		) {
 			returnMessage('vtopcc_nav_bar');
-		} else if (link.indexOf('doSearchExamScheduleForStudent') !== -1) {
-			returnMessage('exam_schedule');
 		} else if (link.indexOf('processViewTimeTable') !== -1) {
 			returnMessage('time_table');
 		}
@@ -214,43 +212,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 	try {
 		if (request.message.course !== '') trigger_download(request);
 	} catch {
-		if (request.message == 'login') {
-			chrome.identity.getAuthToken(
-				{ interactive: true },
-				(auth_token) => {
-					chrome.storage.sync.set({ token: auth_token });
-					if (auth_token) {
-						chrome.identity.getProfileUserInfo((userInfo) => {
-							let email = userInfo.email;
-							chrome.notifications.create('Sign In', {
-								type: 'basic',
-								iconUrl: './../assets/icons/img_128.png',
-								title: 'Sign In',
-								message: `You are successfully signed in with ${email}`,
-							});
-						});
-						sendResponse(true);
-					}
-					return true;
-				},
-			);
-		} else if (request.message === 'logout') {
-			user_signed_in = false;
-			chrome.storage.sync.get(['token'], (token) => {
-				chrome.identity.removeCachedAuthToken(
-					{ token: token.token },
-					() => {
-						chrome.storage.sync.set({ token: null });
-					},
-				);
-			});
-			chrome.notifications.create('Sign Out', {
-				type: 'basic',
-				iconUrl: './../assets/icons/img_128.png',
-				title: 'Sign Out',
-				message: 'Signed out from google',
-			});
-		}
+		// Google auth functionality removed
 	}
 });
 

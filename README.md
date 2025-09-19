@@ -1,6 +1,6 @@
 # ViBoot Enhanced
 
-> **Enhance your VTOP experience in one-click!**
+> **Enhance your VTOP experience in one-click.**
 
 ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Store. It is designed to make VIT's VTOP easier and faster to use for students from the Vellore, Chennai, and Bhopal campuses. The extension helps by automating boring and repetitive tasks, giving helpful insights on attendance and marks.
 
@@ -95,7 +95,7 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 
 - **ViBoot Author:** Manjunadha Abhinai (ViTrendz)
 - **ezOD Author (OD Analysis):** Parth Sidpara
-- **Enhanced by:** Arsh Saxena
+- **Enhanced by:** [Arsh Saxena](https://www.github.com/arshsaxena) and [Aishik Tokdar](https://www.github.com/AishikTokdar)
 
 _Original credits belong to the respective authors only._
 

@@ -157,7 +157,7 @@ function addCheckODButton(summaryBox) {
 	const buttonContainer = document.createElement('div');
 	buttonContainer.id = 'checkODButton';
 	buttonContainer.style.cssText = `
-        margin: 20px 0;
+        margin: 10px 0;
         text-align: center;
     `;
 
