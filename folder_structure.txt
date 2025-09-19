@@ -1,0 +1,33 @@
+.
+├── README.md
+├── assets
+│   ├── icons
+│   │   ├── img_128.png
+│   │   ├── img_16.png
+│   │   └── img_48.png
+│   └── img
+│       ├── ViTrendz.svg
+│       └── logo.svg
+├── folder_structure.txt
+├── html
+│   ├── popup.html
+│   └── styles.css
+├── js
+│   ├── attendance.js
+│   ├── captcha
+│   │   ├── bitmaps.js
+│   │   └── captchaparser.js
+│   ├── course_page.js
+│   ├── exam_schedule.js
+│   ├── marks_page.js
+│   ├── navbar.js
+│   ├── navbarcc.js
+│   ├── on_duty.js
+│   ├── popup.js
+│   └── time_table.js
+├── manifest.json
+└── service_worker
+    ├── 0background.js
+    └── background.js
+
+8 directories, 23 files
