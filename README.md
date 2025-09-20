@@ -21,6 +21,11 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 - **Course-wise Breakdown:** Individual analysis for Theory, Lab, and STS courses
 - **Visual Indicators:** Color-coded passing status (Green: Pass, Red: Need more marks)
 
+### 📅 **Google Calendar Integration**
+
+- **Time Table Sync:** Automatically sync your class schedule to Google Calendar
+- **Exam Schedule Sync:** Sync exam dates and venues to your calendar
+
 ### 🎯 **Enhanced Navigation**
 
 - **Quick Access Toolbar:** One-click access to Attendance, Marks, Course Page, and Time Table
