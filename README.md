@@ -77,6 +77,14 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 - Check if you're on a supported campus URL
 - Ensure the extension is enabled in Chrome
 
+**Google Calendar sync not working:**
+
+- Ensure you're signed in to Google via the extension popup
+- Check your Google Calendar permissions in Chrome settings
+- Verify your internet connection
+- Try signing out and signing in again
+- Refresh the VTOP page and try syncing again
+
 **Attendance calculations incorrect:**
 
 - Refresh the attendance page
@@ -93,13 +101,12 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 
 ## 👥 Credits
 
-| **Role**                    | **Name**                                                                                   | **Course & Year**         |
-|-----------------------------|--------------------------------------------------------------------------------------------|---------------------------|
-| **ViBoot Author**            | [Manjunadha Abhinai](https://www.linkedin.com/in/manjunadha-abhinai/) [ViTrendz]            | CSE @ VITV'25             |
-| **ezOD Author (OD Analysis)**| [Parth Sidpara](https://www.linkedin.com/in/parthsidpara/)                                | CSE @ VITC'27             |
-| **Enhanced by**              | [Arsh Saxena](https://www.github.com/arshsaxena)                                           | ECE @ VITC'27             |
-|                             | [Aishik Tokdar](https://www.github.com/AishikTokdar)                                       | ECE @ VITC'27             |
-
+| **Role**                      | **Name**                                                                         | **Course & Year** |
+| ----------------------------- | -------------------------------------------------------------------------------- | ----------------- |
+| **ViBoot Author**             | [Manjunadha Abhinai](https://www.linkedin.com/in/manjunadha-abhinai/) [ViTrendz] | CSE @ VITV'25     |
+| **ezOD Author (OD Analysis)** | [Parth Sidpara](https://www.linkedin.com/in/parthsidpara/)                       | CSE @ VITC'27     |
+| **Enhanced by**               | [Arsh Saxena](https://www.github.com/arshsaxena)                                 | ECE @ VITC'27     |
+|                               | [Aishik Tokdar](https://www.github.com/AishikTokdar)                             | ECE @ VITC'27     |
 
 _Original credits belong to the respective authors only._
 

@@ -18,13 +18,15 @@
 │   │   ├── bitmaps.js
 │   │   └── captchaparser.js
 │   ├── course_page.js
+│   ├── exam_schedule.js
 │   ├── marks_page.js
 │   ├── navbar.js
 │   ├── navbarcc.js
 │   ├── on_duty.js
+│   ├── popup.js
 │   └── time_table.js
 ├── manifest.json
 └── service_worker
     └── background.js
 
-8 directories, 20 files
+8 directories, 22 files

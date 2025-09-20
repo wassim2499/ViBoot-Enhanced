@@ -195,7 +195,7 @@ const modify_page = () => {
 	//   // document.getElementsByClassName("table")[2].insertAdjacentElement("beforebegin", dropdown_file);
 	//   newDiv.appendChild(dropdown_file);
 
-	//   chrome.storage.sync.set({ file_name: "table_name" });
+	chrome.storage.sync.set({ file_name: 'table_name' });
 
 	//   //Type of selection for check boxes
 	//   let dropdown_hover = document.createElement("select");
