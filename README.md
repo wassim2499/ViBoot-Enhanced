@@ -72,7 +72,7 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 - **VIT Chennai** ([`vtopcc.vit.ac.in`](https://vtopcc.vit.ac.in))
 - **VIT Bhopal** ([`vtop.vitbhopal.ac.in`](https://vtop.vitbhopal.ac.in))
 
-> ⚠️ _**Note:** Feature availability may vary across campuses due to differences in VTOP implementations._
+⚠️ _**Note:** Feature availability may vary across campuses due to differences in VTOP implementations._
 
 ## 🌐 Supported Browsers
 
