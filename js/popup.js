@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	const logoutBtn = document.getElementById('logout-btn');
 	const userInfo = document.getElementById('user-info');
 
+	// Display extension version from manifest
+	const versionElement = document.getElementById('extension-version');
+	if (versionElement) {
+		const manifestData = chrome.runtime.getManifest();
+		versionElement.textContent = manifestData.version;
+	}
+
 	// Check authentication status
 	chrome.storage.sync.get(['token'], (result) => {
 		if (result.token) {

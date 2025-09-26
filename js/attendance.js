@@ -7,7 +7,7 @@ let view_attendance_page = () => {
 		let color_detail = document.createElement('div');
 		color_detail.innerHTML = `
             <p style='color:RGB(34 144 62);'>*Attendance greater than 75%.</p>
-            <p style='color:rgb(255, 171, 16);margin-top:-10px;'>*Be cautious your attendance is in between 74.01% to 74.99%.</p>
+            <p style='color:rgb(255, 171, 16);margin-top:-10px;'>*Be cautious, your attendance is in between 74.01% to 74.99%.</p>
             <p style='color:rgb(238, 75, 43); margin-top:-10px'>*Attendance less than 75%.</p>
             `;
 		table_line.insertAdjacentElement('afterend', color_detail);
@@ -29,9 +29,9 @@ let view_attendance_page = () => {
 
 		let color_detail = document.createElement('div');
 		color_detail.innerHTML = `
-		    <p style='color:RGB(34 144 62);'>*Attendance Greater than 75%</p>
-		    <p style='color:rgb(255, 171, 16);margin-top:-10px;'>*Be Cautious your Attendance is in between 74.01% to 74.99%</p>
-		    <p style='color:rgb(238, 75, 43); margin-top:-10px'>*Attendance Less than 75%</p>
+		    <p style='color:RGB(34 144 62);'>*Attendance greater than 75%.</p>
+		    <p style='color:rgb(255, 171, 16);margin-top:-10px;'>*Be Cautious, your attendance is in between 74.01% to 74.99%.</p>
+		    <p style='color:rgb(238, 75, 43); margin-top:-10px'>*Attendance less than 75%.</p>
 		    `;
 		table_line.insertAdjacentElement('beforeend', color_detail);
 
@@ -77,14 +77,14 @@ let view_attendance_page = () => {
 					new_Table_Content.splice(
 						new_table_content_splice,
 						0,
-						`<td style="vertical-align: middle; border: 1px solid #b2b2b2; padding: 5px; background: rgb(238, 75, 43,0.7);"><p style="margin: 0px;">${req_classes} lab(s) should be attended</p></td>`,
+						`<td style="vertical-align: middle; border: 1px solid #b2b2b2; padding: 5px; background: rgb(238, 75, 43,0.7);"><p style="margin: 0px;">${req_classes} lab(s) should be attended.</p></td>`,
 					);
 					row.innerHTML = new_Table_Content.join('');
 				} else {
 					new_Table_Content.splice(
 						new_table_content_splice,
 						0,
-						`<td style="vertical-align: middle; border: 1px solid #b2b2b2; padding: 5px; background: rgb(238, 75, 43,0.7);"><p style="margin: 0px;">${req_classes} class(es) should be attended</p></td>`,
+						`<td style="vertical-align: middle; border: 1px solid #b2b2b2; padding: 5px; background: rgb(238, 75, 43,0.7);"><p style="margin: 0px;">${req_classes} class(es) should be attended.</p></td>`,
 					);
 					row.innerHTML = new_Table_Content.join('');
 				}
@@ -157,7 +157,7 @@ function addCheckODButton(summaryBox) {
 	const buttonContainer = document.createElement('div');
 	buttonContainer.id = 'checkODButton';
 	buttonContainer.style.cssText = `
-        margin: 10px 0;
+        margin-bottom: 10px;
         text-align: center;
     `;
 

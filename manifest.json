@@ -3,7 +3,7 @@
 	"manifest_version": 3,
 	"name": "ViBoot Enhanced",
 	"description": "Enhance your VTOP in one-click.",
-	"version": "1.4",
+	"version": "1.5",
 	"author": "Arsh Saxena and Aishik Tokdar",
 	"oauth2": {
 		"client_id": "208230014476-3b0u1ld7t9j08aopogkjrocbtahp1h9v.apps.googleusercontent.com",

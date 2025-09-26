@@ -11,7 +11,12 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 - **75% Attendance Calculator:** Automatically calculates how many classes you can skip to maintain 75% attendance
 - **Real-time Alerts:** Color-coded warnings for attendance status (Green: Safe, Yellow: Caution, Red: Danger)
 - **Lab vs Theory Differentiation:** Separate calculations for lab and theory classes
-- **On-Duty Tracking:** Comprehensive OD (On-Duty) summary with automatic counting _(sourced from the [ezOD](https://chromewebstore.google.com/detail/ezod/hcjjembkbilgkojhpapcffibhandgokh) extension by Parth Sidpara)_
+- **On-Duty Tracking:** Comprehensive OD (On-Duty) summary with automatic counting and smart analysis
+    - **Detailed OD Summary:** Complete chronological list of all OD entries with dates, times, and counts
+    - **Course-Wise Analysis:** Separate OD breakdown by course with theory/lab differentiation
+    - **Smart OD Counting:** Automatic calculation (theory slots = 1 OD, lab slots = 2 ODs)
+    - **Total OD Counter:** Real-time total
+      _(OD calculation feature sourced from the [ezOD](https://chromewebstore.google.com/detail/ezod/hcjjembkbilgkojhpapcffibhandgokh) extension by Parth Sidpara)_
 - **Attendance Summary:** Overall attendance statistics with skip calculations for different percentage targets
 
 ### 📈 **Marks Analysis**
@@ -47,7 +52,11 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 
 - Navigate to "Class Attendance" in VTOP
 - View enhanced attendance table with 75% calculations
-- Click "Check OD" button to see comprehensive On-Duty summary
+- Click "Check OD" button to see comprehensive On-Duty summary with:
+    - Complete chronological list of all OD entries
+    - Total OD count with smart theory/lab calculations
+    - Course-wise OD breakdown separating theory and lab components
+- Click "Check Course-Wise OD" for consolidated view of ODs per subject
 - Monitor your attendance status with color-coded indicators
 
 #### Marks Analysis
@@ -59,9 +68,11 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 
 ## 🏫 Supported Campuses
 
-- **VIT Vellore** (`vtop.vit.ac.in`)
-- **VIT Chennai** (`vtop.vit.ac.in`)
-- **VIT Bhopal** (`vtop.vitbhopal.ac.in`)
+- **VIT Vellore** ([`vtop.vit.ac.in`](https://vtop.vit.ac.in))
+- **VIT Chennai** ([`vtop.vit.ac.in`](https://vtop.vit.ac.in))
+- **VIT Bhopal** ([`vtop.vitbhopal.ac.in`](https://vtop.vitbhopal.ac.in))
+
+> ⚠️ _**Note:** Feature availability may vary across campuses due to differences in VTOP implementations._
 
 ## 🌐 Supported Browsers
 
@@ -70,7 +81,7 @@ ViBoot Enhanced is an improved version of ViBoot available on the Chrome Web Sto
 ![Microsoft Edge](https://img.shields.io/badge/Microsoft%20Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)
 ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white)
 
-⚠️ _Note: Firefox and Safari are **not supported**, as they use different extension systems._
+⚠️ _**Note:** Firefox and Safari are **not supported**, as they use different extension systems._
 
 ## 🐛 Troubleshooting
 
